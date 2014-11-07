@@ -1,0 +1,33 @@
+name = "My custom profile"
+description = "Description for my custom installation profile"
+core = 7.x
+distribution_name = profile
+
+; Core dependencies.
+dependencies[] = block
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = field_ui
+dependencies[] = file
+
+; Contrib modules.
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = views
+
+; Features.
+dependencies[] = profile_field_base
+dependencies[] = profile_field_instance
+dependencies[] = profile_filter
+dependencies[] = profile_menu_custom
+dependencies[] = profile_node
+dependencies[] = profile_user_permission
+dependencies[] = profile_user_role

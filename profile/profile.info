@@ -24,10 +24,10 @@ dependencies[] = features
 dependencies[] = views
 
 ; Features.
-dependencies[] = profile_field_base
-dependencies[] = profile_field_instance
-dependencies[] = profile_filter
-dependencies[] = profile_menu_custom
-dependencies[] = profile_node
-dependencies[] = profile_user_permission
-dependencies[] = profile_user_role
+; dependencies[] = profile_field_base
+; dependencies[] = profile_field_instance
+; dependencies[] = profile_filter
+; dependencies[] = profile_menu_custom
+; dependencies[] = profile_node
+; dependencies[] = profile_user_permission
+; dependencies[] = profile_user_role

@@ -2,7 +2,7 @@
 set -e
 
 #
-# Usage: scripts/build.sh [-y] <project> from the boilerplate main directory.
+# Usage: scripts/build.sh [-y] from the boilerplate main directory.
 #
 
 # Definning variables & constants
@@ -33,8 +33,7 @@ NC='\033[00m'
 RED='\033[01;31m'
 
 usage() {
-  $ECHO "Usage: build.sh [-y] [-c] [-s] -p <PROJECT_NAME> " >&2
-  $ECHO "Use -p <PROJECT_NAME>, if not, username will be the default name project." >&2
+  $ECHO "Usage: build.sh [-y] [-c] [-s]" >&2
   $ECHO "Use -s to install your Drupal under ssl at first time." >&2
   $ECHO "Use -y to skip deletion confirmation." >&2
   $ECHO "Use -c to perform a clean installation and the first time installation." >&2
@@ -50,7 +49,6 @@ while getopts ye:csp: opt; do
   case $opt in
     y) ASK=false ;;
     c) CLEAN=true ;;
-    p) PROJECT=$OPTARG ;;
     s) SSL="https://" ;;
     \?)
     echo "Invalid option: -$OPTARG" >&2
@@ -59,9 +57,7 @@ while getopts ye:csp: opt; do
   esac
 done
 
-if [ -z $PROJECT ]; then
-  PROJECT=$(/usr/bin/whoami) 
-fi
+PROJECT=`ls profile | sed -rn 's/([a-zA-Z0-9\_]+)\.info/\1/p'`
 
 if [ ! -f profile/drupal-org.make ]; then
   $ECHO "[error] Run this script expecting ./profile/ directory."

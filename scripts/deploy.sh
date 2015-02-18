@@ -2,7 +2,7 @@
 set -e
 
 #
-# Usage: scripts/build.sh [-y] from the boilerplate main directory.
+# Usage: scripts/deploy.sh [-y] from the boilerplate main directory.
 #
 
 # Definning variables & constants
@@ -33,7 +33,7 @@ NC='\033[00m'
 RED='\033[01;31m'
 
 usage() {
-  $ECHO "Usage: build.sh [-y] [-c] [-s]" >&2
+  $ECHO "Usage: deploy.sh [-y] [-c] [-s]" >&2
   $ECHO "Use -s to install your Drupal under ssl at first time." >&2
   $ECHO "Use -y to skip deletion confirmation." >&2
   $ECHO "Use -c to perform a clean installation and the first time installation." >&2

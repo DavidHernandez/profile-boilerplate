@@ -70,6 +70,9 @@ $RMDIR $TEMP_BUILD
 # Build the profile.
 $ECHO -e "${GREEN}Building the profile...${NC}"
 
+echo "Profile name: ${PROJECT}"
+echo "Temp folder: ${TEMP_BUILD}"
+
 $DRUSH make --no-core profile/$PROJECT.make tmp
 
 # Build the distribution and copy the profile in place.
@@ -78,7 +81,7 @@ $DRUSH make profile/drupal-org-core.make $TEMP_BUILD
 $ECHO -e "${GREEN}Moving to destination...${NC}"
 $MKDIR -p $TEMP_BUILD/profiles/$PROJECT
 echo "${TEMP_BUILD}"
-$CP -r tmp/profiles/$PROJECT/* $TEMP_BUILD/profiles/$PROJECT
+$CP -r tmp/profiles/contrib/$PROJECT/* $TEMP_BUILD/profiles/$PROJECT
 $RM -rf tmp
 $DRUSH make --no-core --contrib-destination="." profile/drupal-org.make tmp
 $CP -r tmp/modules/contrib $TEMP_BUILD/profiles/$PROJECT/modules
